@@ -5,25 +5,31 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "test": "echo \"No tests yet\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emilienpava/ATELIER-FIL-CONDUCTEUR---TODO-APP.git"
+    "url": "git+https://github.com/NardenLaSouris/ATELIER-FIL-CONDUCTEUR---TODO-APP.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "todo",
+    "express",
+    "scalingo",
+    "ci-cd"
+  ],
+  "author": "Jules Neveu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/emilienpava/ATELIER-FIL-CONDUCTEUR---TODO-APP/issues"
+    "url": "https://github.com/NardenLaSouris/ATELIER-FIL-CONDUCTEUR---TODO-APP/issues"
   },
-  "homepage": "https://github.com/emilienpava/ATELIER-FIL-CONDUCTEUR---TODO-APP#readme",
+  "homepage": "https://github.com/NardenLaSouris/ATELIER-FIL-CONDUCTEUR---TODO-APP#readme",
   "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.9"
   }
 }
