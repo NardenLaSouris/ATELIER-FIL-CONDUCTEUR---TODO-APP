@@ -98,5 +98,153 @@ NODE_ENV=development
 Lancer le serveur en developpement :
 
 ```bash
-... (150lignes restantes)
+npm run dev
+```
 
+L'application est ensuite disponible ici :
+
+```txt
+http://localhost:3000
+```
+
+## Scripts disponibles
+
+Lancer le serveur en developpement :
+
+```bash
+npm run dev
+```
+
+Lancer le serveur en mode production :
+
+```bash
+npm start
+```
+
+## Routes disponibles
+
+### Page principale
+
+```txt
+GET /
+```
+
+Affiche l'interface web de l'application.
+
+### Health check
+
+```txt
+GET /api/health
+```
+
+Permet de verifier que l'API fonctionne.
+
+Exemple de reponse :
+
+```json
+{
+  "status": "OK"
+}
+```
+
+## Variables d'environnement
+
+En local, le projet utilise :
+
+```env
+PORT=3000
+NODE_ENV=development
+```
+
+Sur Scalingo, la variable configuree est :
+
+```env
+NODE_ENV=production
+```
+
+La variable `PORT` ne doit pas etre ajoutee manuellement sur Scalingo.  
+Scalingo la fournit automatiquement, et le serveur l'utilise avec :
+
+```js
+const PORT = process.env.PORT || 3000
+```
+
+## Procfile
+
+Le fichier `Procfile` indique a Scalingo comment demarrer l'application :
+
+```txt
+web: npm start
+```
+
+Cette commande lance le script suivant depuis `package.json` :
+
+```json
+"start": "node src/server.js"
+```
+
+## Commandes utiles
+
+Verifier l'etat Git :
+
+```bash
+git status
+```
+
+Ajouter les fichiers modifies :
+
+```bash
+git add .
+```
+
+Creer un commit :
+
+```bash
+git commit -m "message du commit"
+```
+
+Pousser sur GitHub :
+
+```bash
+git push origin main
+```
+
+Lancer le projet en local :
+
+```bash
+npm run dev
+```
+
+Tester le health check en local :
+
+```bash
+curl http://localhost:3000/api/health
+```
+
+Tester le health check en ligne :
+
+```bash
+curl https://jules-emilien-todo-app.osc-fr1.scalingo.io/api/health
+```
+
+## Prochaines etapes prevues
+
+Les prochaines etapes de l'atelier seront :
+
+- Ajouter PostgreSQL
+- Creer une vraie API CRUD pour les taches
+- Connecter le frontend a l'API
+- Ajouter des tests automatises avec Jest et Supertest
+- Mettre en place GitHub Actions
+- Automatiser le deploiement staging et production
+
+## Etat actuel du projet
+
+Le projet correspond actuellement a la fin du Jour 1 de l'atelier :
+
+- Structure Git initialisee
+- Backend Express cree
+- `Procfile` ajoute
+- Frontend simple cree
+- Application deployee sur Scalingo
+- README ajoute
