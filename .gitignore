@@ -1,0 +1,6 @@
+
+# Secrets et dépendances : jamais dans le dépôt
+.env
+.env.*
+!.env.example
+node_modules/
